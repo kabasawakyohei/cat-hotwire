@@ -16,6 +16,7 @@ gem 'pry-byebug'
 gem 'overmind'
 gem 'pry-remote'
 gem "ransack"
+gem "bootstrap_form"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]

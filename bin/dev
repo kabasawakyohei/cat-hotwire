@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+if gem list --no-installed --exact --silent foreman; then
+  echo "Installing foreman..."
+  gem install foreman
+fi
+
+export PORT="${PORT:-3000}"
+
+exec foreman start -f Procfile.dev --env /dev/null "$@"
+
+# overmindをつかうようにする
+# if ! command -v overmind &> /dev/null
+# then
+#   echo "Overmind is not installed. Installing..."
+#   bundle exec gem install overmind
+# fi
+# bundle exec overmind s -f Procfile.dev
